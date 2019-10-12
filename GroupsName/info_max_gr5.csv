@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{140000.0: 1, 60000.0: 1, nan: 1};0.0;29.0;4.86;"1    2;3    1";Полная занятость    3;"Полный день         2;Удаленная работа    1";{'PHP': 2, ' MySQL': 3, ' PHP5': 1, ' HTML5': 1, ' JavaScript': 2, ' Git': 2, ' ООП': 2, 'ООП': 1, ' Laravel': 1, ' PHP': 1, ' jQuery': 1, ' 1С-Битрикс': 1}

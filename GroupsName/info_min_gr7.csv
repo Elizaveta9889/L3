@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{30000.0: 1, nan: 1};0.0;29.0;4.86;1    2;Полная занятость    2;Полный день    2;{'Java': 2, ' Spring Framework': 2, ' PostgreSQL': 1, ' Hibernate': 1, ' Mockito': 1, ' JUnit': 1, ' Docker': 1, ' Kubernetes': 1, ' Java EE': 1, ' Java Servlets': 1, ' REST': 1, ' SOAP': 1, ' SQL': 1, ' MVC': 1}

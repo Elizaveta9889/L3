@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{200000.0: 1, 130000.0: 1, 100000.0: 1};0.0;29.0;4.86;1    3;Полная занятость    3;"Гибкий график       1;Полный день         1;Удаленная работа    1";{'Android': 2, ' Kotlin': 1, ' Java': 2, ' Unit Testing': 1, ' Git': 1, ' Clean Architecture': 1, ' RxJava': 1, ' Dagger': 1, ' HTML': 1, ' XML': 1, ' HTTP': 1, ' ABAP': 1}

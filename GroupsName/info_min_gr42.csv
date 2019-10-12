@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{40000.0: 1, 35200.0: 1, 51800.0: 1, nan: 1};0.0;29.0;4.86;"1    2;0    2";Полная занятость    4;Полный день    4;{'Java': 1, ' Linux': 1, ' Python': 1, ' Elasticsearch': 1, ' Big Data': 1, 'JavaScript': 1, ' HTML': 1, ' CSS': 1, ' git/gitlab': 1, ' UI-библиотеки': 1, ' принципы MVC': 1}
