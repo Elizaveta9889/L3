@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{nan: 1, nan: 1};0.0;29.0;3.047;"От 3 до 6 лет         1;От 1 года до 3 лет    1";Полная занятость    2;Полный день    2;{'.NET Framework': 2, ' ООП': 1, ' SQL': 1, ' C#': 2, ' MVC': 1, ' Git': 2, ' LINQ': 1, ' MS Visual Studio': 1, ' ASP.NET': 1, ' Azure': 1, ' JavaScript': 1}

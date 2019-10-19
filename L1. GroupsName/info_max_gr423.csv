@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{nan: 1};0.0;29.0;3.047;Нет опыта    1;Стажировка    1;Полный день    1;{'ASP.NET': 1, ' jQuery': 1, ' MS SQL Server': 1, ' C#': 1, ' JavaScript': 1, ' Entity Framework': 1, ' .NET Framework': 1, ' MS Visual Studio': 1, ' LINQ': 1, ' ASP.NET MVC': 1, ' ASP.NET Core': 1, ' PostgreSQL': 1, ' vue.js': 1}

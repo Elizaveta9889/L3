@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{nan: 1};0.0;29.0;3.047;От 3 до 6 лет    1;Полная занятость    1;Полный день    1;{'Redis': 1, ' MySQL': 1, ' PostgreSQL': 1, ' RDBMS': 1, ' NoSQL': 1, ' RabbitMQ': 1}

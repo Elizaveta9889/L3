@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{65000.0: 1, 80000.0: 1};0.0;29.0;3.047;"От 3 до 6 лет         1;От 1 года до 3 лет    1";Полная занятость    2;Полный день    2;{'Git': 1, ' ASP.NET': 1, ' C#': 2, ' MVC': 1, ' SQL': 1, 'Design Patterns': 1, ' MS Visual Studio': 1, ' Visual Studio C#': 1, ' СУБД': 1, ' MS SQL Server': 1, ' .NET Framework': 1, ' IIS': 1, ' .NET Core': 1}

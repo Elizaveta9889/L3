@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{15000.0: 1, 20000.0: 1};0.0;29.0;3.047;Нет опыта    2;Полная занятость    2;Полный день    2;{'PHP': 1, ' Node.js': 1, ' JavaScript': 1, ' HTML': 1, ' HTML5': 1, ' Linux': 1, ' Git': 1, ' ООП': 1, ' MySQL': 1, ' CSS': 1, ' PHP5': 1}

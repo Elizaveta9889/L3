@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{150000.0: 1, nan: 1};0.0;29.0;3.046;"От 3 до 6 лет    1;Нет опыта        1";Полная занятость    2;Полный день    2;{'PostgreSQL': 1, ' Delphi': 1, ' SQL': 1, ' C#': 1, ' MS SQL': 1, ' C++': 1}

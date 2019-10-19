@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{nan: 1};0.0;29.0;3.047;От 1 года до 3 лет    1;Полная занятость    1;Гибкий график    1;{'Python': 1, ' Flask': 1, ' MongoDB': 1, ' СУБД': 1, ' SQL': 1, ' ООП': 1, ' Java': 1, ' JavaScript': 1, ' Docker': 1, ' Английский язык': 1, ' NoSQL': 1, ' Django Framework': 1, ' CSS': 1, ' Sass': 1}

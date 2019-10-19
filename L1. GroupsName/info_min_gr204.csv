@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{20000.0: 1};0.0;29.0;3.047;Нет опыта    1;Полная занятость    1;Гибкий график    1;{'Git': 1, ' MySQL': 1, ' MVC': 1, ' PHP': 1, ' ООП': 1, ' 1С-Битрикс': 1, ' PHP5': 1, ' Yii': 1, ' OpenCart': 1}

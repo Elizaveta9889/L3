@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{60000.0: 1, 95000.0: 2};0.0;29.0;3.047;"От 3 до 6 лет         2;От 1 года до 3 лет    1";Полная занятость    3;Полный день    3;{'PostgreSQL': 1, ' JavaScript': 1, ' MongoDB': 1, ' Git': 1, ' back end': 1, ' Python': 1, ' Django Framework': 1}

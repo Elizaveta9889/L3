@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{120000.0: 1, nan: 1, nan: 1};0.0;29.0;3.047;"От 1 года до 3 лет    2;Нет опыта             1";"Полная занятость    2;Проектная работа    1";"Полный день      2;Гибкий график    1";{'C++': 1, ' Qt': 2, ' Git': 1, ' Linux': 2, 'Git': 1, ' C++': 1, ' 1С-Рарус': 1, 'Qt': 1, ' JSON API': 1, ' XML': 1, ' C/C++': 1, ' Web Api': 1}

@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{nan: 1};0.0;29.0;3.047;От 1 года до 3 лет    1;Полная занятость    1;Полный день    1;{'AngularJS': 1, ' Git': 1, ' JavaScript': 1, ' React': 1, ' Redux': 1, ' VueJS': 1, ' Angular': 1, ' webpack': 1, ' npm': 1, ' yarn': 1, ' REST': 1, ' TypeScript': 1, ' ES6+': 1, ' Gulp': 1}

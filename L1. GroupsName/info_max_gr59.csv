@@ -1,0 +1,2 @@
+﻿;max_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{150000.0: 1, nan: 1, nan: 1};0.0;29.0;3.047;От 1 года до 3 лет    3;Полная занятость    3;"Гибкий график    2;Полный день      1";{'Разработка ПО': 1, 'Git': 1, ' MVC': 1, ' Android': 2, ' Java': 1, ' Kotlin': 1, 'Java': 1, ' Android SDK': 1, ' Git': 1, ' ООП': 1}

@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{40000.0: 1};0.0;29.0;3.047;Нет опыта    1;Полная занятость    1;Полный день    1;{'PHP5': 1, ' Yii': 1, ' Git': 1, ' SQL': 1, ' ООП': 1, ' Linux': 1, ' PHP7': 1, ' PHP': 1, ' Docker': 1, ' Yii2': 1, ' PostgreSQL': 1, ' Nginx': 1, ' RabbitMQ': 1, ' Redis': 1, ' ElasticSearch': 1, ' Zabbix': 1, ' Sphinx': 1, ' MySQL': 1}

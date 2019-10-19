@@ -1,0 +1,2 @@
+﻿;min_salarys;minCountDays;maxCountDays;avgCountDays;experience;employment;schedule;skills
+0;{100000.0: 2, 70000.0: 1, nan: 1, nan: 1};0.0;29.0;3.047;"От 1 года до 3 лет    3;От 3 до 6 лет         2";Полная занятость    5;"Гибкий график    4;Полный день      1";{'PHP': 2, ' Git': 1, ' JavaScript': 1, ' MySQL': 4, ' Yii': 2, ' PHP7': 1, 'PHP 7.1': 1, ' PostgreSQL': 1, ' jQuery': 1, ' Nginx': 1, ' PHP': 2, ' Ajax': 1, ' HTML': 2, ' CSS': 2, 'JavaScript': 1}
