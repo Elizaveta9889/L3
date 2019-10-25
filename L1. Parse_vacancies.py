@@ -1,148 +1,23 @@
-import requests
-import re
 import pandas as pd
-import datetime as dt
-import pytz
+from modules import parse_vacancies as pv
+from modules import write_data_frame as w_df
+from modules import divide_vacancies as dv
 
-
-def get_vacancies(area, per_page):
-    url = 'https://api.hh.ru/vacancies'
-    data = {'text': 'Программист', 'area': area, 'per_page': per_page}
-    return requests.get(url, params=data).json()
-
-
-def clear_text(text):
-    regex = re.compile('\r\n|<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
-    return re.sub(regex, '', text)
-
-
-def parse_vacancies(request):
-    return [parse_vacancy(line) for line in request['items']]
-
-
-def parse_vacancy(line):
-    vacancy = dict()
-    vacancy['id'] = line['id']
-    vacancy['name'] = line['name']
-    vacancy['city'] = line['area']['name'] if line['area'] is not None else None
-    vacancy['min_salary'] = line['salary']['from'] if line['salary'] is not None else None
-    vacancy['max_salary'] = line['salary']['to'] if line['salary'] is not None else None
-    vacancy['company'] = line['employer']['name'] if line['employer'] is not None else None
-    vacancy['published_at'] = line['published_at']
-
-    info = requests.get('https://api.hh.ru/vacancies/%s' % line['id']).json()
-
-    vacancy['experience'] = info['experience']['name'] if info['schedule'] is not None else None
-    vacancy['schedule'] = info['schedule']['name'] if info['schedule'] is not None else None
-    vacancy['employment'] = info['employment']['name'] if info['employment'] is not None else None
-
-    descr = clear_text(info['description']) if info['description'] is not None else None
-    descr_mas_cond1 = descr.split('Условия:')
-    descr_mas_cond2 = descr.split('Вам потребуется:')
-    descr_mas_cond3 = descr.split('Мы предлагаем:')
-    vacancy['description'] = descr
-
-    if len(descr_mas_cond1) > 1:
-        vacancy['conditions'] = descr_mas_cond1[1]
-    if len(descr_mas_cond2) > 1:
-        vacancy['conditions'] = descr_mas_cond2[1]
-    if len(descr_mas_cond3) > 1:
-        vacancy['conditions'] = descr_mas_cond3[1]
-
-    vacancy['requirement'] = line['snippet']['requirement'] if line['snippet'] is not None else None
-    vacancy['responsibility'] = line['snippet']['responsibility'] if line['snippet'] is not None else None
-
-    vacancy['key_skills'] = ''
-    for skill in info['key_skills']:
-        vacancy['key_skills'] += skill['name'] + '; '
-    vacancy['key_skills'] = vacancy['key_skills'][:-2]
-    return vacancy
-
-
-def get_groups_salary(data_frame, group_by, num):
-    step = (data_frame[group_by].max() - data_frame[group_by].min()) / num
-    groups = []
-    salary = data_frame[group_by].min()
-    count = 0
-    while data_frame[group_by].min() <= salary <= data_frame[group_by].max() - step:
-        count += 1
-        tmp = data_frame[(data_frame[group_by] > salary) & (data_frame[group_by] <= salary + step)]
-        tmp.to_csv("L1. GroupsSalary" + "/salary_gr" + str(count) + ".csv", sep=';', encoding='UTF-8-sig')
-        groups.append(tmp)
-        salary += step
-    return groups
-
-
-def get_groups_name(data_frame, group_by):
-    categories = pd.unique(data_frame[group_by])
-    groups = []
-    count = 0;
-    for category in categories:
-        count += 1
-        fr = data_frame[data_frame[group_by] == category]
-        groups.append(fr)
-        fr.to_csv("L1. GroupsName" + "/salary_gr" + str(count) + ".csv", sep=';', encoding='UTF-8-sig')
-    return groups
-
-
-def write_info(data_frame, unique, count, directory_name, file_name):
-    unique_dict = []
-    vacancy = dict()
-    q = dict()
-    names = data_frame[unique]
-    for n in names:
-        if n not in q:
-            if n == '':
-                n = 'nan'
-            if n != 'nan':
-                q[n] = 1
-        else:
-            if n == '':
-                n = 'nan'
-            if n != 'nan':
-                q[n] += 1
-    vacancy[unique+'s'] = str(q)
-    date = pd.to_datetime(df['published_at'], utc=True).dt.tz_convert('US/Eastern')
-    days = (dt.datetime.now(pytz.timezone('US/Eastern')) - date).astype('timedelta64[D]')
-    vacancy['minCountDays'] = days.min()
-    vacancy['maxCountDays'] = days.max()
-    vacancy['avgCountDays'] = days.mean()
-    vacancy['experience'] = data_frame['experience'].value_counts().to_string().replace('\n', ';')
-    vacancy['employment'] = data_frame['employment'].value_counts().to_string().replace('\n', ';')
-    vacancy['schedule'] = data_frame['schedule'].value_counts().to_string().replace('\n', ';')
-    skills = data_frame['key_skills'].str.split(';')
-    vacancy_skills = {}
-    for d in skills:
-        for sk in d:
-            if sk not in vacancy_skills:
-                if sk != '':
-                    vacancy_skills[sk] = 1
-            else:
-                if sk != '':
-                    vacancy_skills[sk] += 1
-    vacancy['skills'] = str(vacancy_skills)
-    unique_dict.append(vacancy)
-    pd.DataFrame(unique_dict).to_csv(directory_name + "/" + file_name + str(count) + ".csv", sep=';', encoding='UTF-8-sig')
-
+# Получение вакансий по 10 городам
 areas = [2, 3, 4, 68, 76, 78, 88, 95, 104]
-df = pd.DataFrame(parse_vacancies(get_vacancies(1, 100)))
-for i in areas:
-    df = df.append((parse_vacancies(get_vacancies(i, 100))))
-
+df = pd.DataFrame(pv.parse_vacancies(pv.get_vacancies("Программист", 1, 10)))
+for area in areas:
+    df = df.append((pv.parse_vacancies(pv.get_vacancies("Программист", area, 100))))
+# Сортировка вакасий
 df = df.sort_values(['max_salary', 'min_salary'], ascending=[False, True])
-df.to_csv("Vacancies.csv", sep=';', encoding='UTF-8-sig')
-
-groups = get_groups_salary(df, 'max_salary', 10)
-for i in range(0, 10):
-    write_info(groups[i], 'name', i+1, "L1. GroupsSalary", "info_salary_gr")
-
-groups = get_groups_name(df, 'name')
-i = 0
-for gr in groups:
-    write_info(gr, 'min_salary', i + 1, "L1. GroupsName", "info_min_gr")
-    i += 1
-
-i = 0
-for gr in groups:
-    write_info(gr, 'max_salary', i + 1, "L1. GroupsName", "info_max_gr")
-    i += 1
+# Запись всех вакансий в файл
+w_df.save_data_frame(df, "Vacancies")
+# Получение и запись групп по зарплате
+groups = dv.get_groups_salary(df, 'max_salary', 10)
+w_df.write_groups(groups, "L1. GroupsSalary/salary_gr")
+w_df.write_groups_info(groups, "name", "L1. GroupsSalary/info_salary_gr")
+# Получение и запись групп по названию
+groups = dv.get_groups_name(df, 'name')
+w_df.write_groups(groups, "L1. GroupsName/name_gr")
+w_df.write_groups_info(groups, "min_salary", "L1. GroupsName/info_min_salary_name_gr")
+w_df.write_groups_info(groups, "max_salary", "L1. GroupsName/info_max_salary_name_gr")
